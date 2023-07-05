@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Protfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js">
+    <script src="https://kit.fontawesome.com/70695e9957.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">                        
+                <nav id="navbar">
+                    <!--<img src="logo.png" class="logo">-->
+                    <label class="logo">Akhila</label>
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="container">
+                <div class="header-text">
+                    <p>Computer Science Engineer</p>
+                    <h1>Hi,Im <span>Akhila</span><br>student at KMIT</h1>
+                </div>
+            </div>
+    </div>
+            <!-- ---------about-------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="pictures/photo.jpg.jpeg" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am Karanam Akhila.Currently studying in 3rd year CSE.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Technologies</span><br>HTML,CSS,JavaScript,Bootstrap,MySQL</li>
+                            <li><span>Programming Languages</span><br>Python, Java, Cpp</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="experience">
+                        <ul>
+                            <li>Currently I am a fresher</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Kmit</span><br>B-Tech (CSE)</li>
+                            <li><span>Gowtham Junior College</span><br>Intermediate (MPC)</li>
+                            <li><span>Vignana Bharathi High School</span><br>X (SSC)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------portfolio--------------- -->
+    <div id="projects">
+        <div class="container">
+            <br><br>
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                    <div class="work">
+                            <img src="pictures/work-1.png">
+                            <div class="layer">
+                                <h3>My Protfolio</h3>
+                                <p>The webpage which contains information about me and my works</p>
+                                <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                    </div>
+                    <div class="work">
+                            <img src="pictures/work-2.png">
+                            <div class="layer">
+                                <h3>Crop-Doctor</h3>
+                                <p>the web app designed for automated plant leaf disease detection.</p>
+                                <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>                                
+                            </div>
+                    </div>
+                    <div class="work">
+                        <img src="pictures/work-3.png">
+                            <div class="layer">
+                                <h3>Contact App</h3>
+                                <p>the app for creating,updating and deleting contains</p>
+                                <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                                
+                            </div>
+                    </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!-- -------------------contact--------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>akhila2003@gmail.com</p>
+                        <p><i class="fa-solid fa-square-phone"></i>7365196723</p>
+                        <div class="div social-icons">
+                            <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>       
+                        <div>
+                            <a href="my-cv.pdf" download class="btn btn2">Download CV</a>
+                        </div>
+                 </div>
+                 <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="your name" required>
+                        <input type="email" name="Email" placeholder="your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                 </div>
+            </div>
+         </div>
+            <div class="copyright">
+                <p>Copyright © by akhila<i class="fas fa-heart"></i></p>
+            </div>
+        
+    </div>
+    <script>
+        var navbar=document.getElementById("navbar");
+        var menu=document.getElementById("sidemenu");
+        window.onscroll = function(){
+            if(window.pageYOffset>=menu.offsetTop){
+                navbar.classList.add("sticky");
+            }
+            else{
+                navbar.classList.remove("sticky")
+            }
+        }
+    </script>
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu=document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+<script>
+    const url="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVZyhrUR5joM2Kz63Nm-ucUkrI3B4MOlvaKgFeMt1doGpjtw/formResponse" 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyhJIJCZyiNKeKGFBOik4uKSbZ9WLpMR7v8wRXnf7ring6yJdx-7yUhQD4b4GsD6qAT/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg");
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                    msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
